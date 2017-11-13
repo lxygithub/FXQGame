@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand”/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首届全国支付机构反洗钱知识大赛</title>
+    <link rel="icon" href="image/zfwlogo.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/div-r.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/button.css" type="text/css" charset="utf-8"/>
+
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-1.7.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="js/urls.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/Dialog.js"></script>
+    <script type="text/javascript">
+        questions();
+    </script>
+    <style type="text/css">
+        input[type="button"].btn-primary {
+            border-radius: 15px;
+            width: 100px;
+            outline: none;
+            background: #0165a1;
+            padding: 5px 15px;
+            font-family: SimHei,serif;
+        }
+
+        #img-bg {
+            width: 100%;
+        }
+
+        .span-dati {
+            background: #0165a1;
+            padding: 10px 30px 10px 30px;
+            color: white;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        #div-question {
+            margin-right: 20px;
+            word-break: break-all;
+        }
+
+        input[type="radio"] {
+            vertical-align: top;
+        }
+
+        label{
+            width: 90%;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        #div_result {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+
+        #span-remain-time {
+            color: red;
+            font-size: 35px;
+            font-style: normal;
+            padding-left: 50px;
+            font-weight: bold;
+        }
+
+        td {
+            border: none;
+        }
+        span{
+            font-family:SimHei,serif
+        }
+
+
+    </style>
+</head>
+<body>
+
+<img id="img-bg" src="image/test_banner.png">
+<div>
+    <table class="table" style="margin-bottom: 0;">
+        <tbody>
+        <tr>
+            <td style="border: none;">
+                <div style="padding-left: 30px;">
+                    <div style="height: 72px;width: 100px;"></div>
+                    <span class="span-dati">答题</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <div style="background: #0165a1;height: 5px;"></div>
+    <div id="div-question" style="padding-left: 30px;" align="left">
+        <table class="table">
+            <thead>
+            <tr>
+                <th style="border: none;">
+                    <span id="q-title" style="margin-left: 20px;font-size: 20px;"></span>
+                </th>
+                <td style="padding-bottom: 0;border: none;row-span: 5">
+                    <div align="right">
+                        <div class="div-r">
+                            <span>距离交卷截止时间还剩:</span><br>
+                            <span id="span-remain-time"></span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td style="border: none;">
+                    <input type="radio" name="mygroup" id="radio-a" onclick="selectAnswer('A')"/>
+                    <label id="lab-a" for="radio-a"></label>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <input type="radio" name="mygroup" id="radio-b" onclick="selectAnswer('B')"/>
+                    <label id="lab-b" for="radio-b"></label>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <input type="radio" name="mygroup" id="radio-c" onclick="selectAnswer('C')"/>
+                    <label id="lab-c" for="radio-c"></label>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <input type="radio" name="mygroup" id="radio-d" onclick="selectAnswer('D')"/>
+                    <label id="lab-d" for="radio-d"></label>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: none;">
+                    <div id="div_result">
+                        <img id="img-result" src="image/touming.png"/><span style="color: #0165a1"></span>
+                        <span id="span-result" style="color: #0165a1"></span>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <hr color="#0165a1" style="margin-top: 30px;height: 2px;"/>
+</div>
+<table class="table">
+    <tbody>
+    <tr style="border: transparent 10px solid" align="center">
+        <td align="center" colspan="2"><h4 style="color: #0165a1;font-family:SimHei,serif">本次大赛奖金由以下机构赞助</h4></td>
+    </tr>
+    <tr style="border: transparent 10px solid;">
+        <td align="right">
+            <a href="http://www.bsfit.com.cn/" target="_blank" style="text-decoration: none;">
+                <img src="image/logo_bangsheng.png">
+            </a>
+        </td>
+        <td align="left">
+            <a href="http://www.agilecentury.com/" target="_blank" style="text-decoration: none;">
+                <img src="image/logo_jieruan.png">
+            </a>
+        </td>
+    </tr>
+    <tr style="border: transparent 50px solid;margin-top: 30px;">
+        <td align="right">
+            <input class="btn-primary" type="button"
+                   value="上一题" onclick="next(false);">
+        </td>
+        <td align="left">
+            <input class="btn-primary" type="button"
+                   name="phone" value="下一题" onclick="next(true);">
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>

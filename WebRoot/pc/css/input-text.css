@@ -1,0 +1,8 @@
+.input-text {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 7px;
+    margin-left: 5px;
+    width: 100px;
+    outline: none;
+}

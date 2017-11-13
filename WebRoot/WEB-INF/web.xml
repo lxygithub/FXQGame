@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name></display-name>
+	<servlet>
+		<servlet-name>findcompany</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findcompany</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findcompany</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>findcompanysj</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findcompanysj</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findcompanysj</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>findyzm</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findyzm</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findyzm</url-pattern>
+		<!-- 地址名 1111-->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>login</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/login</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>findbd</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findbd</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findbd</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>findbdsj</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findbdsj</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findbdsj</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>findtopic</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findtopic</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findtopic</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>tsx</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tsx</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/tsx</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>addjl</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addjl</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/addjl</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>findresult</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>findresult</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/findresult</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>syqm</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<servlet-class>cn.muzhong.main.MtListeningServer</servlet-class>
+		<!-- 我们定义的servlet应用名字对应的具体servlet文件 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>syqm</servlet-name>
+		<!-- 我们定义的servlet应用名字 -->
+		<url-pattern>/syqm</url-pattern>
+		<!-- 地址名 -->
+
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

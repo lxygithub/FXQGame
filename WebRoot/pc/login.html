@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>首届全国支付机构反洗钱知识大赛</title>
+    <meta charset="UTF-8">
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand”/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/zfwlogo.ico" type="image/x-icon"/>
+    <link href="css/button.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <link href="css/input-text.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <link href="css/jquery.bigautocomplete.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="js/jquery-1.7.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script type="text/javascript" src="js/urls.js"></script>
+    <script src="js/companydata.js"></script>
+    <script type="text/javascript" src="js/jquery.bigautocomplete.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script src="js/Dialog.js"></script>
+    <style type="text/css">
+        input[type="button"].btn-primary {
+            border-radius: 15px;
+            width: 100px;
+            outline: none;
+            background: #0165a1;
+            padding: 5px 15px;
+            font-family: SimHei,serif;
+        }
+        span{
+            font-family: SimHei,serif;
+        }
+    </style>
+</head>
+<body>
+
+<img title="反洗钱知识竞赛" src="image/banner_login.png" style="width:100%;">
+
+<table class="table">
+    <caption><h2 align="center" style="color: #0165a1;font-family: SimHei,serif;">本次大赛奖金由以下机构赞助</h2></caption>
+    <tbody>
+    <tr style="border: transparent 10px solid ">
+        <td align="right">
+            <a href="http://www.bsfit.com.cn/" target="_blank" style="text-decoration: none;">
+                <img src="image/logo_bangsheng.png" title="邦盛科技">
+            </a>
+        </td>
+        <td align="left">
+            <a href="http://www.agilecentury.com/" target="_blank" style="text-decoration: none;">
+                <img src="image/logo_jieruan.png" title="捷软世纪" style="margin-left: 20px;">
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<hr style="margin-top: 50px;margin-bottom: 20px;height: 5px;" color="#0165a1"/>
+<div class="container" align="center" style="width: 100%;padding: 10px;">
+
+    姓名<input id="input_name" class="input-text" type="text">&nbsp;&nbsp;
+    单位名称<input id="input_company" class="input-text" type="text" placeholder="请输入公司名称关键字选择公司"
+               style="width: auto;">&nbsp;&nbsp;
+    手机号<input id="input_phone" class="input-text" type="tel" style="width: 120px;">&nbsp;&nbsp;
+    <input id="input_check_code" type="tel" class="input-text" placeholder="点击输入验证码">&nbsp;&nbsp;
+    <input id="get_check_code" class="btn-primary" type="button" style="border-radius: 5px;width: auto;"
+           value="点击获取验证码" onclick="getCheckCode();">
+</div>
+<hr color="#0165a1" style="margin-top: 20px;height: 2px;"/>
+<div align="center" style="margin-top: 30px">
+    <input class="btn-primary" type="button" name="phone" value="开始答题" onclick="start();">
+</div>
+
+<script>
+    //    loadingCompany();
+    var inputPhone = $("#input_phone");
+    function start() {
+        var companyId = getCompanyId($("#input_company").val());
+        if ($.trim(companyId) == "") {
+            alert("只能输入有支付牌照的公司名称，请您重新输入！");
+        } else {
+            login($("#input_name").val(), companyId,
+                $("#input_phone").val(), $("#input_check_code").val());
+        }
+    }
+
+    function getCheckCode() {
+        var companyId = getCompanyId($("#input_company").val());
+        if ($.trim(companyId) == "") {
+            alert("只能输入有支付牌照的公司名称，请您重新输入！");
+            return;
+        }
+        var re = new RegExp("(^1[0-9]{10}$)");
+        if (inputPhone.val() === null || inputPhone.val() === "") {
+            alert("请输入手机号！");
+            return;
+        }
+        if (!re.test(inputPhone.val())) {
+            alert("手机号码格式不正确！");
+            return;
+        }
+        var btnCode = $("#get_check_code");
+        var remainTime = 59;
+
+        checkCode($("#input_phone").val());
+        var task = setInterval(function () {
+            btnCode.attr("disabled", "false");
+            btnCode.val("重新发送(" + remainTime + ")");
+            remainTime--;
+            if (remainTime === 0) {
+                remainTime = 59;
+                btnCode.val("点击获取验证码");
+                clearInterval(task);
+                btnCode.removeAttr("disabled");
+            }
+        }, 1000);
+    }
+    $(function () {
+        $("#input_company").bigAutocomplete({
+            data: JSON.parse(companyArr),
+            callback: function (data) {
+                $("#input_company").value = data;
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>
